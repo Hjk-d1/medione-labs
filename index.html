@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>우리 병원 수익 검진 | 메디원</title>
+<meta property="og:title" content="우리 병원 수익 검진 | 메디원">
+<meta property="og:description" content="2026 수가 개편으로 외주 검사 수입의 60%가 사라집니다. 30초 만에 우리 병원 영향을 확인해보세요.">
+<meta property="og:type" content="website">
+<meta name="description" content="2026 수가 개편으로 외주 검사 수입의 60%가 사라집니다. 30초 만에 우리 병원 영향을 확인해보세요.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+@property --rot{syntax:'<angle>';inherits:true;initial-value:0deg}
+
+:root{
+  --bg:#050D1C;--green:#00E87C;--blue:#3facde;
+  --text:#EDF2FF;--muted:#5C7099;--muted2:#8FA3C4;
+  --surface:rgba(11,22,40,.72);--track:#162035;--orange:#FF8A5C;
+}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  min-height:100vh;display:flex;justify-content:center;
+  padding:40px 18px 60px;position:relative;
+  -webkit-font-smoothing:antialiased;
+}
+/* ambient 조명 (글래스 재료) */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 45% at 15% 20%,rgba(0,232,124,.12),transparent 65%),
+    radial-gradient(ellipse 55% 45% at 88% 55%,rgba(63,172,222,.10),transparent 65%),
+    radial-gradient(ellipse 50% 40% at 40% 95%,rgba(0,232,124,.06),transparent 60%);
+}
+.page{width:100%;max-width:430px;position:relative;z-index:1}
+
+/* ══ HERO ══ */
+.hero{text-align:center;margin-bottom:34px}
+.eyebrow{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:var(--green);border:1px solid rgba(0,232,124,.3);border-radius:20px;
+  padding:5px 14px;margin-bottom:18px;background:rgba(0,232,124,.05);
+}
+.h1{
+  font-size:clamp(24px,7vw,30px);font-weight:900;line-height:1.32;
+  letter-spacing:-.5px;margin-bottom:14px;text-wrap:balance;
+}
+.h1 .loss{color:var(--orange)}
+.hero-sub{
+  font-size:13px;color:var(--muted2);line-height:1.75;text-wrap:balance;
+}
+.hero-sub b{color:var(--text);font-weight:700}
+
+/* ══ 스텝 라벨 ══ */
+.step-lbl{
+  display:flex;align-items:center;gap:8px;margin:0 0 12px 2px;
+  font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--muted);
+}
+.step-lbl .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border-radius:50%;font-size:10px;
+  background:rgba(0,232,124,.12);color:var(--green);border:1px solid rgba(0,232,124,.3);
+}
+.step-lbl .free{
+  margin-left:auto;font-size:10px;color:var(--blue);letter-spacing:.05em;
+  border:1px solid rgba(63,172,222,.35);border-radius:12px;padding:2px 9px;
+  background:rgba(63,172,222,.08);
+}
+
+/* ══ 카드 공통 (글래스) ══ */
+.card{
+  background:var(--surface);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;padding:22px 20px;margin-bottom:28px;
+  box-shadow:0 16px 48px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* ══ STEP 1 문진 ══ */
+.q{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:20px;text-align:center;letter-spacing:-.3px}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:5px;
+  border-radius:3px;background:var(--track);outline:none;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:30px;height:30px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 0 5px rgba(0,232,124,.16),0 2px 10px rgba(0,232,124,.4);
+  cursor:grab;transition:box-shadow .15s;
+}
+input[type=range]:active::-webkit-slider-thumb{box-shadow:0 0 0 9px rgba(0,232,124,.2),0 2px 10px rgba(0,232,124,.4)}
+input[type=range]::-moz-range-thumb{
+  width:30px;height:30px;border:none;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 5px rgba(0,232,124,.16);cursor:grab;
+}
+.ends{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:9px}
+.pill{
+  margin:14px auto 0;display:table;
+  background:rgba(0,232,124,.08);border:1px solid rgba(0,232,124,.25);
+  border-radius:9px;padding:7px 20px;font-size:16px;font-weight:800;color:var(--green);
+  font-variant-numeric:tabular-nums;letter-spacing:-.3px;
+}
+.q-hint{font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
+
+/* ══ 결과: 3열 ══ */
+.tri{display:flex;gap:7px;margin-bottom:14px}
+.tc{
+  flex:1;padding:13px 6px 11px;border-radius:12px;text-align:center;border:1px solid;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.tc-lbl{font-size:9.5px;margin-bottom:6px;line-height:1.5;color:var(--muted)}
+.tc-amt{font-size:17px;font-weight:900;letter-spacing:-.5px;font-variant-numeric:tabular-nums;line-height:1}
+.tc-sub{font-size:9px;margin-top:5px;font-weight:700}
+.tc.now{background:rgba(11,22,40,.7);border-color:rgba(255,255,255,.08)}
+.tc.now .tc-amt{color:var(--muted2)}
+.tc.now .tc-sub{color:#3E5470}
+.tc.keep{background:rgba(255,138,92,.06);border-color:rgba(255,138,92,.26)}
+.tc.keep .tc-amt{color:var(--orange)}
+.tc.keep .tc-sub{color:rgba(255,138,92,.75)}
+.tc.move{background:rgba(0,232,124,.06);border-color:rgba(0,232,124,.26)}
+.tc.move .tc-amt{color:var(--green)}
+.tc.move .tc-sub{color:rgba(0,232,124,.6)}
+.tc-year{font-size:9px;font-weight:400;opacity:.6}
+
+/* ══ 큰 숫자 ══ */
+.verdict{
+  position:relative;text-align:center;padding:24px 18px 20px;border-radius:16px;
+  background:rgba(11,22,40,.7);border:1px solid rgba(0,232,124,.14);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  overflow:hidden;
+}
+.verdict::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 75% 65% at 50% 30%,rgba(0,232,124,.12),transparent);
+}
+.v-lbl{font-size:11.5px;color:var(--muted2);margin-bottom:10px;position:relative;line-height:1.6}
+.v-num{
+  font-size:clamp(46px,13vw,58px);font-weight:900;color:var(--green);
+  letter-spacing:-2.5px;line-height:1;font-variant-numeric:tabular-nums;position:relative;
+}
+.v-num .u{font-size:.45em;font-weight:700;letter-spacing:-1px}
+.v-per{font-size:12px;color:var(--muted);margin-top:8px;position:relative}
+
+/* 정직 브릿지 */
+.bridge{
+  text-align:center;font-size:13px;line-height:1.8;color:var(--muted2);
+  padding:22px 10px 26px;text-wrap:balance;
+}
+.bridge b{color:var(--text)}
+.bridge .arrow{display:block;font-size:18px;margin-top:10px;color:var(--green)}
+
+/* ══ STEP 2 정밀검사 (회전 glow 테두리) ══ */
+.precision{
+  --rot:0deg;
+  position:relative;border-radius:20px;padding:26px 22px 24px;margin-bottom:12px;
+  background:rgba(8,20,42,.8);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 24px 64px rgba(0,0,0,.55);
+}
+.precision::before{
+  content:'';position:absolute;inset:-1px;border-radius:21px;padding:1.5px;
+  background:conic-gradient(from var(--rot),
+    rgba(63,172,222,.0) 0deg,rgba(63,172,222,.9) 60deg,
+    rgba(0,232,124,1) 110deg,rgba(63,172,222,.9) 160deg,
+    rgba(63,172,222,0) 220deg,rgba(63,172,222,0) 360deg);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite:exclude;
+  animation:spin 7s linear infinite;
+  pointer-events:none;
+}
+.precision::after{
+  content:'';position:absolute;inset:-14px;border-radius:30px;pointer-events:none;z-index:-1;
+  background:conic-gradient(from var(--rot),
+    transparent 0deg,rgba(63,172,222,.25) 60deg,
+    rgba(0,232,124,.35) 110deg,rgba(63,172,222,.25) 160deg,
+    transparent 220deg,transparent 360deg);
+  filter:blur(22px);
+  animation:spin 7s linear infinite;
+}
+@keyframes spin{to{--rot:360deg}}
+@media(prefers-reduced-motion:reduce){
+  .precision::before,.precision::after{animation:none;--rot:120deg}
+}
+
+.p-head{
+  font-size:19px;font-weight:900;line-height:1.42;letter-spacing:-.4px;
+  margin-bottom:12px;text-wrap:balance;
+}
+.p-head em{font-style:normal;color:var(--green)}
+.p-body{font-size:13px;color:var(--muted2);line-height:1.8;margin-bottom:20px}
+.p-body b{color:var(--text)}
+
+.steps{display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.st{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);
+  border-radius:11px;padding:11px 14px;
+}
+.st-n{
+  flex-shrink:0;width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:800;color:#050D1C;background:var(--green);
+}
+.st-t{font-size:13px;font-weight:600;line-height:1.5}
+.st-t small{display:block;font-size:10.5px;font-weight:400;color:var(--muted);margin-top:1px}
+
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:17px 20px;border:none;border-radius:14px;
+  background:var(--green);color:#050D1C;
+  font-size:15.5px;font-weight:800;letter-spacing:-.3px;cursor:pointer;
+  font-family:inherit;text-decoration:none;
+  transition:opacity .15s,transform .1s;
+  box-shadow:0 6px 24px rgba(0,232,124,.25);
+}
+.cta:active{transform:scale(.98)}
+.cta:hover{opacity:.92}
+.p-trust{font-size:10.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.7}
+
+/* ══ 각주 ══ */
+.foot{
+  font-size:10px;color:var(--muted);line-height:1.8;text-align:center;
+  padding:22px 8px 0;border-top:1px solid rgba(255,255,255,.06);margin-top:6px;
+}
+.foot b{color:var(--muted2);font-weight:700}
+.brand{margin-top:14px;font-size:10.5px;color:var(--muted);letter-spacing:.06em}
+.brand b{color:var(--green);font-weight:800}
+</style>
+
+<div class="page">
+
+  <!-- HERO : 확정된 정책 사실 (추정 아님) -->
+  <div class="hero">
+    <div class="eyebrow">2026 수가 개편 · 12월 시행</div>
+    <h1 class="h1">외주 검사 수입,<br><span class="loss">60%가 사라집니다</span></h1>
+    <p class="hero-sub">
+      건강보험 수가 개편(건정심 의결)으로 검사를 외부에 맡길 때<br>
+      의원이 받는 몫이 <b>약 80% → 25~35%</b>로 줄어듭니다.<br>
+      12월부터, 모든 의원에 적용됩니다.
+    </p>
+  </div>
+
+  <!-- STEP 1 : 문진 -->
+  <div class="step-lbl"><span class="num">1</span>문진 — 우리 병원은 얼마나?</div>
+  <div class="card">
+    <div class="q">하루에 혈액검사 나가는 환자,<br>몇 명쯤인가요?</div>
+    <input type="range" id="slider" min="5" max="60" value="20" step="5">
+    <div class="ends"><span>5명</span><span>60명</span></div>
+    <div class="pill" id="pill">하루 20명</div>
+    <div class="q-hint">내원 환자 말고, 채혈·검사가 나가는 환자 기준이에요</div>
+  </div>
+
+  <!-- 결과 -->
+  <div class="tri">
+    <div class="tc now">
+      <div class="tc-lbl">지금<br>(~11월)</div>
+      <div class="tc-amt" id="cNow">3.0억</div>
+      <div class="tc-sub">현행 외주 수입 <span class="tc-year">/년</span></div>
+    </div>
+    <div class="tc keep">
+      <div class="tc-lbl">12월부터<br>그대로 두면</div>
+      <div class="tc-amt" id="cKeep">1.2억</div>
+      <div class="tc-sub" id="cLoss">▼ 1.8억 증발 <span class="tc-year">/년</span></div>
+    </div>
+    <div class="tc move">
+      <div class="tc-lbl">12월부터<br>원내 전환하면</div>
+      <div class="tc-amt" id="cMove">2.7억</div>
+      <div class="tc-sub">시약비 차감 후 <span class="tc-year">/년</span></div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <div class="v-lbl">그대로 두기 vs 원내 전환 — 연간 차이</div>
+    <div class="v-num">+<span id="vNum">1.5억</span></div>
+    <div class="v-per">하루 검사 환자 <span id="vN">20</span>명 기준 · 1차 추정</div>
+  </div>
+
+  <!-- 정직 브릿지 : 추정의 한계가 CTA의 연료 -->
+  <div class="bridge">
+    단, 이건 <b>문진 단계의 추정</b>입니다.<br>
+    실제 숫자는 우리 병원이 <b>어떤 검사를 얼마나 하느냐</b>에 따라 달라져요.<br>
+    정확한 진단에는 검체가 필요합니다.
+    <span class="arrow">▼</span>
+  </div>
+
+  <!-- STEP 2 : 정밀검사 (리드 마그넷) -->
+  <div class="step-lbl"><span class="num">2</span>정밀검사<span class="free">무료</span></div>
+  <div class="precision">
+    <div class="p-head">검사항목별 건수만 있으면,<br>추정이 아니라 <em>우리 병원 숫자</em>가 나옵니다</div>
+    <p class="p-body">
+      우리 병원이 한 달에 <b>어떤 검사를 몇 건</b> 내보내는지만 알려주세요.
+      항목별로 다시 계산한 <b>맞춤 리포트</b>를 무료로 보내드립니다.
+    </p>
+    <div class="steps">
+      <div class="st"><div class="st-n">1</div><div class="st-t">검사항목별 건수 준비<small>매달 받는 청구 내역 사진 한 장이면 충분해요</small></div></div>
+      <div class="st"><div class="st-n">2</div><div class="st-t">채널톡으로 보내기<small>앱 설치 없이 바로 문의할 수 있어요</small></div></div>
+      <div class="st"><div class="st-n">3</div><div class="st-t">우리 병원 맞춤 리포트 수령<small>항목별 개편 전/후 · 원내 전환 손익 비교</small></div></div>
+    </div>
+    <a class="cta" href="#" id="ctaChannel">💬 검사 건수 보내고 무료 리포트 받기</a>
+    <div class="p-trust">개인정보는 리포트 작성 외 용도로 사용하지 않습니다</div>
+  </div>
+
+  <!-- 각주 -->
+  <div class="foot">
+    <b>1차 추정 기준</b> — 내과·가정의학과 기본 검사 패널 7종(생화학·CBC·HbA1c·전해질·갑상선·소변·Vit.D),
+    검사 환자 1인당 기본 패널 시행 가정 · 월 22진료일 · 임상병리사 인건비·장비비 미포함 ·
+    2026년 12월 1단계 수가 기준. 진료과와 검사 구성에 따라 실제와 차이가 있을 수 있습니다.
+    <div class="brand"><b>MEDIONE</b> · 원내검사 파트너</div>
+  </div>
+
+</div>
+
+<script>
+/* 채널톡 링크 — 리포트 워크플로우 직행 (일반 응대 안 거침) */
+const CHANNEL_TALK_URL='https://medione.channel.io/workflows/844167';
+
+const ctaEl=document.getElementById('ctaChannel');
+if(CHANNEL_TALK_URL){
+  ctaEl.href=CHANNEL_TALK_URL;
+  ctaEl.target='_blank';
+  ctaEl.rel='noopener';
+}else{
+  ctaEl.addEventListener('click',e=>{e.preventDefault();alert('채널톡 연결 준비 중입니다.');});
+}
+
+/* 상수: 하루 검사환자 1명당 연간 만원 (김길원 보고서 §3 역산 — 검증 대기) */
+const K={now:1477,keep:587,move:1330};
+const fmt=man=>man>=10000?(man/10000).toFixed(1)+'억':Math.round(man).toLocaleString('ko-KR')+'만';
+
+const slider=document.getElementById('slider');
+let curDiff=(K.move-K.keep)*20,raf;
+
+function fill(){
+  const p=(slider.value-slider.min)/(slider.max-slider.min)*100;
+  slider.style.background=`linear-gradient(to right,#00E87C ${p}%,#162035 ${p}%)`;
+}
+
+function animDiff(target){
+  if(raf)cancelAnimationFrame(raf);
+  const from=curDiff,d=target-from,t0=performance.now(),dur=380;
+  (function step(now){
+    const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);
+    document.getElementById('vNum').textContent=fmt(from+d*e);
+    if(p<1)raf=requestAnimationFrame(step);else curDiff=target;
+  })(t0);
+}
+
+function update(){
+  const n=+slider.value;
+  document.getElementById('pill').textContent=`하루 ${n}명`;
+  document.getElementById('vN').textContent=n;
+  document.getElementById('cNow').textContent=fmt(K.now*n);
+  document.getElementById('cKeep').textContent=fmt(K.keep*n);
+  document.getElementById('cMove').textContent=fmt(K.move*n);
+  document.getElementById('cLoss').innerHTML=`▼ ${fmt((K.now-K.keep)*n)} 증발 <span class="tc-year">/년</span>`;
+  animDiff((K.move-K.keep)*n);
+  fill();
+}
+
+slider.addEventListener('input',update);
+update();
+</script>
+</body>
+</html>
