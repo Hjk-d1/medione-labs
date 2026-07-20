@@ -259,9 +259,9 @@ input[type=range]::-moz-range-thumb{
   <!-- HERO : 확정된 정책 사실 (추정 아님) -->
   <div class="hero">
     <div class="eyebrow">2026 수가 개편 · 12월 시행</div>
-    <h1 class="h1">검사 외주의 계산법이<br><span class="loss">12월에 바뀝니다</span></h1>
+    <h1 class="h1">검체검사 위·수탁 제도가<br><span class="loss">12월부터 변경됩니다</span></h1>
     <p class="hero-sub">
-      건강보험 수가 개편(건정심 의결)으로, 검사를 외부에 맡길 때<br>
+      건강보험 수가 개편(건정심 의결)으로, 검사를 수탁기관에 의뢰할 때<br>
       의원이 받는 몫이 <b>75~85% → 25~35%</b>로 줄어듭니다.<br>
       2026년 12월부터 순차 적용됩니다.
     </p>
@@ -278,11 +278,11 @@ input[type=range]::-moz-range-thumb{
       <button type="button" class="chip" data-v="ped">소아청소년과</button>
       <button type="button" class="chip" data-v="etc">기타</button>
     </div>
-    <div class="q" style="margin-top:26px">하루에 혈액검사 나가는 환자,<br>몇 명쯤인가요?</div>
+    <div class="q" style="margin-top:26px">하루 혈액검사 검체 수는<br>몇 개인가요?</div>
     <input type="range" id="slider" min="5" max="60" value="20" step="5">
-    <div class="ends"><span>5명</span><span>60명</span></div>
-    <div class="pill" id="pill">하루 20명</div>
-    <div class="q-hint">내원 환자 말고, 채혈·검사가 나가는 환자 기준이에요</div>
+    <div class="ends"><span>5개</span><span>60개</span></div>
+    <div class="pill" id="pill">하루 20개</div>
+    <div class="q-hint">채혈이 나가는 환자 기준으로 세어주세요 (환자 1명 = 검체 1개로 계산해요)</div>
     <div class="q-lbl" style="margin-top:24px">검체검사 운영 방식</div>
     <div class="chips" id="mixChips">
       <button type="button" class="chip on" data-v="out">대부분 수탁(외주)</button>
@@ -293,7 +293,7 @@ input[type=range]::-moz-range-thumb{
 
   <!-- 분기 알림 -->
   <div class="notice low" id="lowNotice" style="display:none">📉 <b>이 규모에서는 원내 전환이 정답이 아닐 수 있습니다.</b> 검사량이 손익분기에 못 미치면 고정비와 시약 유효기간 손실이 이익을 앞설 수 있습니다 — 저희 원칙은 "분기점에 못 미치면 들이지 마시라"입니다. 정확한 분기점은 무료 정밀 분석에서 확인하세요.</div>
-  <div class="notice inm" id="inNotice" style="display:none">ℹ️ <b>원내 중심 병원도 검사료 인하(−21%)의 영향을 받습니다.</b> 검사 구성 최적화 여지는 정밀 분석에서 확인하실 수 있어요.</div>
+  <div class="notice inm" id="inNotice" style="display:none">ℹ️ <b>원내 중심 병원도 검사료 인하(약 −21%)의 영향을 받습니다.</b> 검사 구성 최적화 여지는 정밀 분석에서 확인하실 수 있어요.</div>
 
   <!-- 결과 -->
   <div class="tri-cap">연간 검사 순수입 비교 · 추정 중간값 (직접 운영비 차감)</div>
@@ -320,14 +320,14 @@ input[type=range]::-moz-range-thumb{
     <div class="v-num" id="vBand">4,900만~9,400만</div>
     <div class="v-recover" id="vRecover">원내 전환 시 회복 여지 — 중간 추정 연 +3,100만, 정확한 폭은 정밀 분석에서</div>
     <div class="v-2028" id="v2028">2028년 2단계(110%) 적용 시 최대 연 1.1억 수준까지 확대 (가정치)</div>
-    <div class="v-per"><span id="vWho">내과 · 하루 검사 환자 20명</span> 기준 · 고시 확정 전 추정</div>
+    <div class="v-per"><span id="vWho">내과 · 하루 검체 20개</span> 기준 · 고시 확정 전 추정</div>
   </div>
 
   <!-- 정직 브릿지 : 추정의 한계가 CTA의 연료 -->
   <div class="bridge">
     단, 이건 <b>문진 단계의 추정</b>입니다.<br>
     실제 숫자는 우리 병원이 <b>어떤 검사를 얼마나 하느냐</b>에 따라 달라져요.<br>
-    정확한 진단에는 검체가 필요합니다.
+    정확한 진단에는 정확한 검사항목별 건수 내역이 필요합니다.
     <span class="arrow">▼</span>
   </div>
 
@@ -350,7 +350,7 @@ input[type=range]::-moz-range-thumb{
 
   <!-- 각주 -->
   <div class="foot">
-    <b>계산 근거와 가정</b> — 하루 검사 환자 수 × 월 24진료일 × 진료과별 건당 평균 검사료(내과 2.8 · 가정의학과 2.4 · 소아청소년과 1.8 · 기타 2.2만원, 가정치) ·
+    <b>계산 근거와 가정</b> — 하루 혈액검사 검체 수(검사 환자 1명 ≈ 검체 1개 가정) × 월 24진료일 × 진료과별 검체 1개당 평균 검사료(내과 2.8 · 가정의학과 2.4 · 소아청소년과 1.8 · 기타 2.2만원, 가정치) ·
     현행 수탁 의원 몫 75~85% → 개편 후 25~35%(질관리 조건부 포함) · 원내 전환 가능 비중 70~85% 가정 ·
     결과는 시약·정도관리·소모품 등 직접 운영비(검사료의 15~40% 가정)를 뺀 순수입 추정이며, 인력 등 병원별 고정비는 제외 ·
     규모 추정 오차 ±15% 반영. 검사 구성과 수탁 계약 조건에 따라 실제와 다를 수 있습니다.<br>
@@ -413,7 +413,7 @@ function update(){
   const M=n*CFG.D*A2, Ms=M*r, Mi=M*(1-r);
   const F=CFG.F26, cM=mid(CFG.c), YaM=mid(CFG.Ya), CM=mid(CFG.C), YnM=mid(CFG.Ynow);
 
-  document.getElementById('pill').textContent=`하루 ${n}명`;
+  document.getElementById('pill').textContent=`하루 ${n}개`;
 
   /* 세 시나리오 순수입 — 중간 계수 (§A-3, 월→연) */
   const now = Ms*YnM        + Mi*(1-cM);
@@ -444,9 +444,9 @@ function update(){
   /* 분기: 원내중심 · 부적합 (§A-4) */
   const inMode = ST.mix==='in';
   document.getElementById('vLbl').textContent = inMode
-    ? '개편 후 연간 검사 수입 감소 — 검사료 인하(−21%) 영향'
+    ? '개편 후 연간 검사 수입 감소 — 검사료 인하(약 −21%) 영향'
     : '지금처럼 수탁을 유지하면 — 개편 후 연간 검사 수입 감소';
-  document.getElementById('vWho').textContent = `${CFG.fee[ST.spec].name} · 하루 검사 환자 ${n}명`;
+  document.getElementById('vWho').textContent = `${CFG.fee[ST.spec].name} · 하루 검체 ${n}개`;
   document.getElementById('tcMove').style.display   = inMode?'none':'';
   document.getElementById('vRecover').style.display = inMode?'none':'';
   document.getElementById('inNotice').style.display = inMode?'':'none';
